@@ -1,0 +1,24 @@
+org: andrewreis
+service: shonnen-arena-api-${env:ENVIRONMENT}
+frameworkVersion: '3'
+useDotenv: true
+
+provider:
+  name: aws
+  runtime: nodejs20.x
+
+  environment:
+    ENVIRONMENT : ${env:ENVIRONMENT}
+
+functions:
+  api:
+    handler: src/http.handler
+    events:
+      - httpApi: "*"
+
+plugins:
+  - serverless-plugin-typescript
+  - serverless-offline
+
+package:
+  excludeDevDependencies: true

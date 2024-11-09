@@ -1,0 +1,23 @@
+{
+  "name": "shonnen-arena-api",
+  "version": "1.0.0",
+  "author": "AndrewReis",
+  "description": "",
+  "type": "commonjs",
+  "scripts": {
+    "dev": "sls offline --reloadHandler "
+  },
+  "dependencies": {
+    "@fastify/aws-lambda": "^5.0.0",
+    "fastify": "^5.1.0",
+    "serverless-http": "^3.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.9.0",
+    "dotenv": "^16.4.5",
+    "serverless": "^3.38.0",
+    "serverless-offline": "^13.3.3",
+    "serverless-plugin-typescript": "^2.1.5",
+    "typescript": "^5.6.3"
+  }
+}
