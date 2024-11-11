@@ -1,5 +1,5 @@
 org: andrewreis
-service: shonnen-arena-api-${env:ENVIRONMENT}
+service: shonnen-arena-api
 frameworkVersion: '3'
 useDotenv: true
 
@@ -11,10 +11,20 @@ provider:
     ENVIRONMENT : ${env:ENVIRONMENT}
 
 functions:
-  api:
-    handler: src/http.handler
+  http:
+    handler: src/http.httpHandler
     events:
       - httpApi: "*"
+
+  websocket:
+    handler: src/ws/server.websocketHandler
+    events:
+      - websocket:
+          route: $connect
+      - websocket:
+          route: $disconnect
+      - websocket:
+          route: playerAction
 
 plugins:
   - serverless-plugin-typescript

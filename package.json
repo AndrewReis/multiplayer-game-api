@@ -5,12 +5,15 @@
   "description": "",
   "type": "commonjs",
   "scripts": {
-    "dev": "sls offline --reloadHandler "
+    "dev": "sls offline --reloadHandler",
+    "ws:dev": "tsx watch src/ws/local.ts"
   },
   "dependencies": {
     "@fastify/aws-lambda": "^5.0.0",
-    "fastify": "^5.1.0",
-    "serverless-http": "^3.2.0"
+    "fastify": "^4.28.1",
+    "fastify-socket.io": "^5.1.0",
+    "serverless-http": "^3.2.0",
+    "socket.io": "^4.8.1"
   },
   "devDependencies": {
     "@types/node": "^22.9.0",
@@ -18,6 +21,7 @@
     "serverless": "^3.38.0",
     "serverless-offline": "^13.3.3",
     "serverless-plugin-typescript": "^2.1.5",
+    "tsx": "^4.19.2",
     "typescript": "^5.6.3"
   }
 }
