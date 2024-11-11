@@ -1,5 +1,5 @@
 org: andrewreis
-service: shonnen-arena-api
+service: multiplayer-game-api
 frameworkVersion: '3'
 useDotenv: true
 
